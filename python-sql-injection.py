@@ -1,11 +1,11 @@
 import sqlite3
-from flask import Flask
+import flask
 
-app = Flask("example")
+app = flask.Flask("example")
 
 @app.route('/user')
 def get_users():
-    user = request.args["user"]
+    user = flask.request.args["user"]
     sql = """SELECT user FROM users WHERE user = \'%s\'"""
 
     conn = sqlite3.connect('example')
