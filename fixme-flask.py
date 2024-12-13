@@ -1,16 +1,16 @@
 import sqlite3
-from flask import Flask, redirect
+import flask
 
-app = Flask("example")
+app = flask.Flask("example")
 
 @app.route("/redirecting")
 def redirecting():
-    url = request.args["url"]
-    return redirect(url)
+    url = flask.request.args["url"]
+    return flask.redirect(url)
 
 @app.route('/user')
 def get_users():
-    user = request.args["user"]
+    user = flask.request.args["user"]
     sql = """SELECT user FROM users WHERE user = \'%s\'"""
 
     conn = sqlite3.connect('example')
