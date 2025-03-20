@@ -1,3 +1,4 @@
 venv/
 .sonar/
 **/node_modules/
+.idea/
